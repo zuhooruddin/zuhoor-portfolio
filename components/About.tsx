@@ -26,6 +26,7 @@ const highlights = [
     color: 'text-violet-400',
     bg: 'from-violet-500/10 to-transparent',
   },
+  
   {
     icon: Bot,
     title: 'Chatbot & Automation',
