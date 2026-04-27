@@ -32,7 +32,7 @@ const highlights = [
     title: 'Chatbot & Automation',
     desc: 'GPT-4 powered chatbot builders, automation pipelines, and AI workflow orchestration',
     color: 'text-teal-400',
-    bg: 'from-teal-650/10 to-transparent',
+    bg: 'from-teal-700/10 to-transparent',
   },
   {
     icon: Layers,
@@ -93,7 +93,7 @@ export default function About() {
           >
             <div className="glass rounded-2xl p-8 border border-white/6 h-full">
               {/* Avatar placeholder */}
-              <div className="w-20 h-20 rounded-2xl mb-6 bg-gradient-to-br from-teal-650/30 to-cyan-500/20 border border-white/10 flex items-center justify-center text-4xl">
+              <div className="w-20 h-20 rounded-2xl mb-6 bg-gradient-to-br from-teal-700/30 to-cyan-500/20 border border-white/10 flex items-center justify-center text-4xl">
                 🧑‍💻
               </div>
 

@@ -5,7 +5,7 @@ import { ArrowDown, Sparkles, Zap, Globe } from 'lucide-react';
 
 const floatingTags = [
   { label: 'AWS', icon: '☁️', color: 'from-white/10 to-white/5', delay: 0 },
-  { label: 'OpenAI API', icon: '🤖', color: 'from-teal-650/15 to-teal-400/5', delay: 0.3 },
+  { label: 'OpenAI API', icon: '🤖', color: 'from-teal-700/15 to-teal-400/5', delay: 0.3 },
   { label: 'Node.js', icon: '🚀', color: 'from-cyan-500/15 to-cyan-400/5', delay: 0.6 },
   { label: 'MongoDB', icon: '🗄️', color: 'from-green-500/10 to-green-400/5', delay: 0.9 },
   { label: 'Stripe', icon: '💳', color: 'from-violet-500/10 to-violet-400/5', delay: 1.1 },
@@ -92,7 +92,7 @@ export default function Hero() {
                 onClick={scrollToProjects}
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-medium text-sm bg-gradient-to-r from-teal-650 to-teal-400 text-white shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 transition-all duration-300"
+                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-medium text-sm bg-gradient-to-r from-teal-700 to-teal-400 text-white shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 transition-all duration-300"
               >
                 <Zap size={15} />
                 View Projects
@@ -158,7 +158,7 @@ export default function Hero() {
                 <span className="font-syne font-bold text-xs text-white/80 text-center">
                   Full Stack
                 </span>
-                <div className="w-8 h-0.5 bg-gradient-to-r from-teal-650 to-cyan-400 rounded" />
+                <div className="w-8 h-0.5 bg-gradient-to-r from-teal-700 to-cyan-400 rounded" />
               </div>
 
               {/* Orbiting tech tags */}

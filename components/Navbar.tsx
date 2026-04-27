@@ -53,7 +53,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
             className="flex items-center gap-2 group cursor-pointer"
             whileHover={{ scale: 1.02 }}
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-650 to-teal-400/60 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-700 to-teal-400/60 flex items-center justify-center">
               <Code2 size={16} className="text-[#030812]" />
             </div>
             <span className="font-syne font-700 text-lg text-white">
@@ -95,7 +95,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => scrollTo('#contact')}
-              className="hidden md:flex items-center gap-2 px-5 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-teal-650 to-teal-400 text-white hover:shadow-lg hover:shadow-teal-500/25 transition-all duration-300"
+              className="hidden md:flex items-center gap-2 px-5 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-teal-700 to-teal-400 text-white hover:shadow-lg hover:shadow-teal-500/25 transition-all duration-300"
             >
               Hire Me
             </motion.button>
@@ -133,7 +133,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
             <div className="mt-3 pt-3 border-t border-white/5">
               <button
                 onClick={() => scrollTo('#contact')}
-                className="w-full py-3 rounded-lg text-sm font-medium bg-gradient-to-r from-teal-650 to-teal-400 text-white"
+                className="w-full py-3 rounded-lg text-sm font-medium bg-gradient-to-r from-teal-700 to-teal-400 text-white"
               >
                 Hire Me
               </button>

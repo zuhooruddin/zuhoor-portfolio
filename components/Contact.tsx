@@ -195,7 +195,7 @@ export default function Contact() {
                     disabled={formState === 'loading'}
                     whileHover={{ scale: 1.01, y: -1 }}
                     whileTap={{ scale: 0.99 }}
-                    className="w-full py-4 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 bg-gradient-to-r from-teal-650 to-teal-400 text-white shadow-lg shadow-teal-500/20 hover:shadow-teal-500/35 transition-all duration-300 disabled:opacity-70"
+                    className="w-full py-4 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 bg-gradient-to-r from-teal-700 to-teal-400 text-white shadow-lg shadow-teal-500/20 hover:shadow-teal-500/35 transition-all duration-300 disabled:opacity-70"
                   >
                     {formState === 'loading' ? (
                       <>

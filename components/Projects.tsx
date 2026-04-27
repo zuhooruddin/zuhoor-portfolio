@@ -20,7 +20,7 @@ const projects = [
       'Scalable project structure',
       'Performance-focused implementation',
     ],
-    gradient: 'from-teal-650/20 via-cyan-500/10 to-transparent',
+    gradient: 'from-teal-700/20 via-cyan-500/10 to-transparent',
     accent: '#14B8A6',
     accentBg: 'bg-teal-500/10',
     link: 'https://caradvisers.com',

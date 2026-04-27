@@ -16,7 +16,7 @@ const services = [
       'Role-based access control',
       'Admin dashboards & analytics',
     ],
-    gradient: 'from-teal-650/15 to-cyan-500/5',
+    gradient: 'from-teal-700/15 to-cyan-500/5',
     iconColor: 'text-teal-400',
     iconBg: 'bg-teal-500/15',
     accentColor: '#14B8A6',
@@ -163,7 +163,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.6 }}
-          className="mt-8 rounded-2xl border border-teal-500/20 bg-gradient-to-br from-teal-650/10 via-transparent to-cyan-500/5 p-10 text-center"
+          className="mt-8 rounded-2xl border border-teal-500/20 bg-gradient-to-br from-teal-700/10 via-transparent to-cyan-500/5 p-10 text-center"
         >
           <h3 className="font-syne font-bold text-2xl sm:text-3xl text-white mb-3">
             Have a project in mind?
@@ -175,7 +175,7 @@ export default function Services() {
             onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            className="px-8 py-3.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-teal-650 to-teal-400 text-white shadow-lg shadow-teal-500/20 hover:shadow-teal-500/35 transition-all duration-300"
+            className="px-8 py-3.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-teal-700 to-teal-400 text-white shadow-lg shadow-teal-500/20 hover:shadow-teal-500/35 transition-all duration-300"
           >
             Let&apos;s Work Together
           </motion.button>

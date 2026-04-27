@@ -45,7 +45,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-650 to-teal-400/60 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-700 to-teal-400/60 flex items-center justify-center">
                 <Code2 size={16} className="text-[#030812]" />
               </div>
               <span className="font-syne font-bold text-lg text-white">

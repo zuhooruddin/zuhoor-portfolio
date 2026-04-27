@@ -19,7 +19,7 @@ const skillGroups = [
   {
     category: 'Backend',
     icon: '⚙️',
-    color: 'from-teal-650/20 to-cyan-500/5',
+    color: 'from-teal-700/20 to-cyan-500/5',
     accent: '#14B8A6',
     skills: [
       { name: 'Node.js / Express', level: 94 },
