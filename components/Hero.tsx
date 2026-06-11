@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowDown, Sparkles, Zap, Globe } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowDown, Sparkles, Zap, Globe, Download } from 'lucide-react';
 
 const floatingTags = [
   { label: 'AWS', icon: '☁️', color: 'from-white/10 to-white/5', delay: 0 },
@@ -107,6 +108,17 @@ export default function Hero() {
                 <Globe size={15} />
                 Contact Me
               </motion.button>
+
+              <motion.a
+                href="/Zuhoor_Uddin_Resume.pdf"
+                download
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-medium text-sm glass border border-white/10 text-white hover:border-teal-500/30 hover:bg-white/6 transition-all duration-300"
+              >
+                <Download size={15} />
+                Download CV
+              </motion.a>
             </motion.div>
 
             {/* Stats */}
@@ -153,12 +165,15 @@ export default function Hero() {
               />
 
               {/* Center card */}
-              <div className="absolute inset-16 rounded-2xl glass border border-white/10 flex flex-col items-center justify-center gap-2">
-                <div className="text-3xl">👨‍💻</div>
-                <span className="font-syne font-bold text-xs text-white/80 text-center">
-                  Full Stack
-                </span>
-                <div className="w-8 h-0.5 bg-gradient-to-r from-teal-700 to-cyan-400 rounded" />
+              <div className="absolute inset-16 rounded-full overflow-hidden border-2 border-teal-500/30 shadow-xl shadow-teal-500/10">
+                <Image
+                  src="/zuhoor.webp"
+                  alt="Zuhoor Uddin"
+                  fill
+                  sizes="180px"
+                  className="object-cover object-top"
+                  priority
+                />
               </div>
 
               {/* Orbiting tech tags */}

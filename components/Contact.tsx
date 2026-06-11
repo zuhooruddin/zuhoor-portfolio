@@ -20,6 +20,7 @@ export default function Contact() {
 
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [formState, setFormState] = useState<FormState>('idle');
+  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -28,12 +29,23 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormState('loading');
-    await new Promise((r) => setTimeout(r, 1800));
-    setFormState('success');
-    setTimeout(() => {
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error('Failed to send');
+      setFormState('success');
+      setTimeout(() => {
+        setFormState('idle');
+        setForm({ name: '', email: '', message: '' });
+      }, 3000);
+    } catch {
+      setError('Something went wrong. Please try again or email me directly.');
       setFormState('idle');
-      setForm({ name: '', email: '', message: '' });
-    }, 3000);
+    }
   };
 
   return (
@@ -154,7 +166,8 @@ export default function Contact() {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-xl bg-white/4 border border-white/8 text-white placeholder:text-[#4A5568] text-sm focus:outline-none focus:border-teal-500/40 focus:bg-white/6 transition-all duration-300"
+                        style={{ colorScheme: 'dark' }}
+                        className="w-full px-4 py-3 rounded-xl bg-white/4 border border-white/8 text-white placeholder:text-[#6B7A99] text-sm focus:outline-none focus:border-teal-500/40 focus:bg-white/6 transition-all duration-300"
                       />
                     </div>
                     <div>
@@ -168,7 +181,8 @@ export default function Contact() {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="john@example.com"
-                        className="w-full px-4 py-3 rounded-xl bg-white/4 border border-white/8 text-white placeholder:text-[#4A5568] text-sm focus:outline-none focus:border-teal-500/40 focus:bg-white/6 transition-all duration-300"
+                        style={{ colorScheme: 'dark' }}
+                        className="w-full px-4 py-3 rounded-xl bg-white/4 border border-white/8 text-white placeholder:text-[#6B7A99] text-sm focus:outline-none focus:border-teal-500/40 focus:bg-white/6 transition-all duration-300"
                       />
                     </div>
                   </div>
@@ -185,7 +199,8 @@ export default function Contact() {
                       value={form.message}
                       onChange={handleChange}
                       placeholder="Tell me about your project — what are you building? What's the timeline? Any specific requirements?"
-                      className="w-full px-4 py-3 rounded-xl bg-white/4 border border-white/8 text-white placeholder:text-[#4A5568] text-sm focus:outline-none focus:border-teal-500/40 focus:bg-white/6 transition-all duration-300 resize-none"
+                      style={{ colorScheme: 'dark' }}
+                      className="w-full px-4 py-3 rounded-xl bg-white/4 border border-white/8 text-white placeholder:text-[#6B7A99] text-sm focus:outline-none focus:border-teal-500/40 focus:bg-white/6 transition-all duration-300 resize-none"
                     />
                   </div>
 
@@ -209,6 +224,10 @@ export default function Contact() {
                       </>
                     )}
                   </motion.button>
+
+                  {error && (
+                    <p className="text-center text-xs text-red-400">{error}</p>
+                  )}
 
                   <p className="text-center text-xs text-[#4A5568]">
                     Your information is kept private and never shared.
