@@ -65,7 +65,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1 }}
-          className="font-syne font-bold text-4xl sm:text-5xl text-white mb-4"
+          className="font-syne font-bold text-4xl sm:text-5xl text-[var(--text-primary)] mb-4"
         >
           Let&apos;s Build Something{' '}
           <span className="text-gradient">Great</span>
@@ -74,7 +74,7 @@ export default function Contact() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.2 }}
-          className="text-[#6B7A99] mb-12 max-w-lg"
+          className="text-[var(--text-muted)] mb-12 max-w-lg"
         >
           Have a project, an idea, or just want to connect? I&apos;d love to hear from you.
           Let&apos;s make something great together.
@@ -93,24 +93,24 @@ export default function Contact() {
               return (
                 <div
                   key={info.label}
-                  className="glass rounded-xl p-5 border border-white/6 flex items-center gap-4"
+                  className="glass rounded-xl p-5 border border-[rgba(var(--surface-rgb),0.06)] flex items-center gap-4"
                 >
                   <div className={`w-10 h-10 rounded-lg glass flex items-center justify-center flex-shrink-0`}>
                     <Icon size={16} className={info.color} />
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-[#6B7A99] mb-0.5">{info.label}</p>
+                    <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-0.5">{info.label}</p>
                     {info.href ? (
                       <a
                         href={info.href}
                         target={info.label === 'WhatsApp' ? '_blank' : undefined}
                         rel={info.label === 'WhatsApp' ? 'noopener noreferrer' : undefined}
-                        className="text-sm text-white hover:text-teal-400 transition-colors"
+                        className="text-sm text-[var(--text-primary)] hover:text-teal-400 transition-colors"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-sm text-white">{info.value}</p>
+                      <p className="text-sm text-[var(--text-primary)]">{info.value}</p>
                     )}
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export default function Contact() {
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-green-400 text-xs font-medium">Currently Available</span>
               </div>
-              <p className="text-[#6B7A99] text-sm leading-relaxed">
+              <p className="text-[var(--text-muted)] text-sm leading-relaxed">
                 Open to freelance projects, long-term collaborations, and full-time opportunities.
               </p>
             </div>
@@ -136,7 +136,7 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="lg:col-span-3"
           >
-            <div className="glass rounded-2xl p-8 border border-white/6">
+            <div className="glass rounded-2xl p-8 border border-[rgba(var(--surface-rgb),0.06)]">
               {formState === 'success' ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -146,8 +146,8 @@ export default function Contact() {
                   <div className="w-16 h-16 rounded-2xl bg-green-500/15 flex items-center justify-center mb-5">
                     <CheckCircle size={32} className="text-green-400" />
                   </div>
-                  <h3 className="font-syne font-bold text-xl text-white mb-2">Message Sent!</h3>
-                  <p className="text-[#6B7A99] text-sm">
+                  <h3 className="font-syne font-bold text-xl text-[var(--text-primary)] mb-2">Message Sent!</h3>
+                  <p className="text-[var(--text-muted)] text-sm">
                     Thanks for reaching out. I&apos;ll get back to you within 24 hours.
                   </p>
                 </motion.div>
@@ -156,7 +156,7 @@ export default function Contact() {
                   {/* Name + Email row */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs text-[#6B7A99] mb-2 uppercase tracking-wider">
+                      <label className="block text-xs text-[var(--text-muted)] mb-2 uppercase tracking-wider">
                         Name
                       </label>
                       <input
@@ -166,12 +166,12 @@ export default function Contact() {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="John Doe"
-                        style={{ colorScheme: 'dark' }}
-                        className="w-full px-4 py-3 rounded-xl bg-white/4 border border-white/8 text-white placeholder:text-[#6B7A99] text-sm focus:outline-none focus:border-teal-500/40 focus:bg-white/6 transition-all duration-300"
+
+                        className="w-full px-4 py-3 rounded-xl bg-[rgba(var(--surface-rgb),0.04)] border border-[rgba(var(--surface-rgb),0.08)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] text-sm focus:outline-none focus:border-teal-500/40 focus:bg-[rgba(var(--surface-rgb),0.06)] transition-all duration-300"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs text-[#6B7A99] mb-2 uppercase tracking-wider">
+                      <label className="block text-xs text-[var(--text-muted)] mb-2 uppercase tracking-wider">
                         Email
                       </label>
                       <input
@@ -181,15 +181,15 @@ export default function Contact() {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="john@example.com"
-                        style={{ colorScheme: 'dark' }}
-                        className="w-full px-4 py-3 rounded-xl bg-white/4 border border-white/8 text-white placeholder:text-[#6B7A99] text-sm focus:outline-none focus:border-teal-500/40 focus:bg-white/6 transition-all duration-300"
+
+                        className="w-full px-4 py-3 rounded-xl bg-[rgba(var(--surface-rgb),0.04)] border border-[rgba(var(--surface-rgb),0.08)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] text-sm focus:outline-none focus:border-teal-500/40 focus:bg-[rgba(var(--surface-rgb),0.06)] transition-all duration-300"
                       />
                     </div>
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label className="block text-xs text-[#6B7A99] mb-2 uppercase tracking-wider">
+                    <label className="block text-xs text-[var(--text-muted)] mb-2 uppercase tracking-wider">
                       Message
                     </label>
                     <textarea
@@ -199,8 +199,8 @@ export default function Contact() {
                       value={form.message}
                       onChange={handleChange}
                       placeholder="Tell me about your project — what are you building? What's the timeline? Any specific requirements?"
-                      style={{ colorScheme: 'dark' }}
-                      className="w-full px-4 py-3 rounded-xl bg-white/4 border border-white/8 text-white placeholder:text-[#6B7A99] text-sm focus:outline-none focus:border-teal-500/40 focus:bg-white/6 transition-all duration-300 resize-none"
+
+                      className="w-full px-4 py-3 rounded-xl bg-[rgba(var(--surface-rgb),0.04)] border border-[rgba(var(--surface-rgb),0.08)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] text-sm focus:outline-none focus:border-teal-500/40 focus:bg-[rgba(var(--surface-rgb),0.06)] transition-all duration-300 resize-none"
                     />
                   </div>
 
@@ -210,7 +210,7 @@ export default function Contact() {
                     disabled={formState === 'loading'}
                     whileHover={{ scale: 1.01, y: -1 }}
                     whileTap={{ scale: 0.99 }}
-                    className="w-full py-4 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 bg-gradient-to-r from-teal-700 to-teal-400 text-white shadow-lg shadow-teal-500/20 hover:shadow-teal-500/35 transition-all duration-300 disabled:opacity-70"
+                    className="w-full py-4 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 bg-gradient-to-r from-teal-700 to-teal-400 text-[var(--text-primary)] shadow-lg shadow-teal-500/20 hover:shadow-teal-500/35 transition-all duration-300 disabled:opacity-70"
                   >
                     {formState === 'loading' ? (
                       <>
@@ -229,7 +229,7 @@ export default function Contact() {
                     <p className="text-center text-xs text-red-400">{error}</p>
                   )}
 
-                  <p className="text-center text-xs text-[#4A5568]">
+                  <p className="text-center text-xs text-[var(--text-faint)]">
                     Your information is kept private and never shared.
                   </p>
                 </form>

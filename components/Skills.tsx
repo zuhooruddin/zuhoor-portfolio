@@ -73,10 +73,10 @@ function SkillBar({
   return (
     <div ref={ref} className="mb-4">
       <div className="flex justify-between items-center mb-1.5">
-        <span className="text-sm text-[#A8B4CC]">{name}</span>
-        <span className="text-xs font-mono text-[#6B7A99]">{level}%</span>
+        <span className="text-sm text-[var(--text-secondary)]">{name}</span>
+        <span className="text-xs font-mono text-[var(--text-muted)]">{level}%</span>
       </div>
-      <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+      <div className="h-1.5 bg-[rgba(var(--surface-rgb),0.05)] rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           animate={inView ? { width: `${level}%` } : { width: 0 }}
@@ -113,7 +113,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-syne font-bold text-4xl sm:text-5xl text-white mb-4"
+          className="font-syne font-bold text-4xl sm:text-5xl text-[var(--text-primary)] mb-4"
         >
           Skills &{' '}
           <span className="text-gradient">Technologies</span>
@@ -123,7 +123,7 @@ export default function Skills() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.2 }}
-          className="text-[#6B7A99] mb-12 max-w-xl"
+          className="text-[var(--text-muted)] mb-12 max-w-xl"
         >
           A curated stack built for shipping production-grade applications fast.
         </motion.p>
@@ -136,11 +136,11 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + gi * 0.1 }}
-              className={`glass rounded-2xl p-6 border border-white/6 bg-gradient-to-br ${group.color}`}
+              className={`glass rounded-2xl p-6 border border-[rgba(var(--surface-rgb),0.06)] bg-gradient-to-br ${group.color}`}
             >
               <div className="flex items-center gap-2 mb-5">
                 <span className="text-xl">{group.icon}</span>
-                <h3 className="font-syne font-semibold text-white text-sm">{group.category}</h3>
+                <h3 className="font-syne font-semibold text-[var(--text-primary)] text-sm">{group.category}</h3>
               </div>
               {group.skills.map((skill, si) => (
                 <SkillBar
@@ -160,9 +160,9 @@ export default function Skills() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.8 }}
-          className="glass rounded-2xl p-8 border border-white/6"
+          className="glass rounded-2xl p-8 border border-[rgba(var(--surface-rgb),0.06)]"
         >
-          <p className="text-xs text-[#6B7A99] uppercase tracking-widest mb-5 font-medium">
+          <p className="text-xs text-[var(--text-muted)] uppercase tracking-widest mb-5 font-medium">
             Full Tech Stack
           </p>
           <div className="flex flex-wrap gap-2.5">
@@ -173,7 +173,7 @@ export default function Skills() {
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: 0.8 + i * 0.03 }}
                 whileHover={{ scale: 1.05, borderColor: 'rgba(240,165,0,0.4)' }}
-                className="px-3 py-1.5 rounded-lg glass border border-white/8 text-xs text-[#8896B3] hover:text-white cursor-default transition-colors"
+                className="px-3 py-1.5 rounded-lg glass border border-[rgba(var(--surface-rgb),0.08)] text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] cursor-default transition-colors"
               >
                 {tech}
               </motion.span>

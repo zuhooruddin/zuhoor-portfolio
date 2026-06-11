@@ -74,7 +74,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-syne font-bold text-4xl sm:text-5xl text-white mb-6"
+          className="font-syne font-bold text-4xl sm:text-5xl text-[var(--text-primary)] mb-6"
         >
           Engineering digital
           <br />
@@ -91,21 +91,21 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-2"
           >
-            <div className="glass rounded-2xl p-8 border border-white/6 h-full">
+            <div className="glass rounded-2xl p-8 border border-[rgba(var(--surface-rgb),0.06)] h-full">
               {/* Avatar placeholder */}
-              <div className="w-20 h-20 rounded-2xl mb-6 bg-gradient-to-br from-teal-700/30 to-cyan-500/20 border border-white/10 flex items-center justify-center text-4xl">
+              <div className="w-20 h-20 rounded-2xl mb-6 bg-gradient-to-br from-teal-700/30 to-cyan-500/20 border border-[rgba(var(--surface-rgb),0.10)] flex items-center justify-center text-4xl">
                 🧑‍💻
               </div>
 
-              <p className="text-[#8896B3] leading-relaxed mb-6">
+              <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
                 I&apos;m a full-stack developer with strong experience building scalable{' '}
-                <span className="text-white font-medium">SaaS platforms</span>,{' '}
-                <span className="text-white font-medium">eCommerce systems</span>,{' '}
-                <span className="text-white font-medium">blockchain solutions</span>, and{' '}
-                <span className="text-white font-medium">AI-powered applications</span> that solve real-world problems at scale.
+                <span className="text-[var(--text-primary)] font-medium">SaaS platforms</span>,{' '}
+                <span className="text-[var(--text-primary)] font-medium">eCommerce systems</span>,{' '}
+                <span className="text-[var(--text-primary)] font-medium">blockchain solutions</span>, and{' '}
+                <span className="text-[var(--text-primary)] font-medium">AI-powered applications</span> that solve real-world problems at scale.
               </p>
 
-              <p className="text-[#6B7A99] leading-relaxed mb-8">
+              <p className="text-[var(--text-muted)] leading-relaxed mb-8">
                 From architecting production-grade backends to crafting pixel-perfect UIs, I bring a
                 product-focused mindset to every project — shipping fast without sacrificing quality.
               </p>
@@ -117,7 +117,7 @@ export default function About() {
                   { emoji: '🎯', text: 'Focused on AI, SaaS, and Blockchain products' },
                   { emoji: '⚡', text: 'Fast delivery, clean architecture' },
                 ].map((fact) => (
-                  <div key={fact.text} className="flex items-center gap-3 text-sm text-[#8896B3]">
+                  <div key={fact.text} className="flex items-center gap-3 text-sm text-[var(--text-secondary)]">
                     <span>{fact.emoji}</span>
                     {fact.text}
                   </div>
@@ -136,13 +136,13 @@ export default function About() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
-                  className="glass glass-hover rounded-xl p-5 border border-white/6 group cursor-default"
+                  className="glass glass-hover rounded-xl p-5 border border-[rgba(var(--surface-rgb),0.06)] group cursor-default"
                 >
                   <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${item.bg} flex items-center justify-center mb-4`}>
                     <Icon size={18} className={item.color} />
                   </div>
-                  <h3 className="font-syne font-semibold text-white text-sm mb-2">{item.title}</h3>
-                  <p className="text-[#6B7A99] text-xs leading-relaxed">{item.desc}</p>
+                  <h3 className="font-syne font-semibold text-[var(--text-primary)] text-sm mb-2">{item.title}</h3>
+                  <p className="text-[var(--text-muted)] text-xs leading-relaxed">{item.desc}</p>
                 </motion.div>
               );
             })}

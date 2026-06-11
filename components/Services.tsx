@@ -95,7 +95,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="font-syne font-bold text-4xl sm:text-5xl text-white"
+            className="font-syne font-bold text-4xl sm:text-5xl text-[var(--text-primary)]"
           >
             What I <span className="text-gradient">Build</span>
           </motion.h2>
@@ -103,7 +103,7 @@ export default function Services() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.2 }}
-            className="text-[#6B7A99] text-sm max-w-xs text-right"
+            className="text-[var(--text-muted)] text-sm max-w-xs text-right"
           >
             Specialized services for modern digital products
           </motion.p>
@@ -119,7 +119,7 @@ export default function Services() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className={`glass glass-hover rounded-2xl p-8 border border-white/6 bg-gradient-to-br ${service.gradient} group`}
+                className={`glass glass-hover rounded-2xl p-8 border border-[rgba(var(--surface-rgb),0.06)] bg-gradient-to-br ${service.gradient} group`}
               >
                 {/* Icon */}
                 <div className={`w-12 h-12 rounded-xl ${service.iconBg} flex items-center justify-center mb-6`}>
@@ -127,13 +127,13 @@ export default function Services() {
                 </div>
 
                 {/* Content */}
-                <h3 className="font-syne font-bold text-xl text-white mb-3">{service.title}</h3>
-                <p className="text-[#6B7A99] text-sm leading-relaxed mb-6">{service.description}</p>
+                <h3 className="font-syne font-bold text-xl text-[var(--text-primary)] mb-3">{service.title}</h3>
+                <p className="text-[var(--text-muted)] text-sm leading-relaxed mb-6">{service.description}</p>
 
                 {/* Feature list */}
                 <ul className="space-y-2 mb-6">
                   {service.items.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-[#8896B3]">
+                    <li key={item} className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
                       <div
                         className="w-1 h-1 rounded-full flex-shrink-0"
                         style={{ background: service.accentColor }}
@@ -165,17 +165,17 @@ export default function Services() {
           transition={{ delay: 0.6 }}
           className="mt-8 rounded-2xl border border-teal-500/20 bg-gradient-to-br from-teal-700/10 via-transparent to-cyan-500/5 p-10 text-center"
         >
-          <h3 className="font-syne font-bold text-2xl sm:text-3xl text-white mb-3">
+          <h3 className="font-syne font-bold text-2xl sm:text-3xl text-[var(--text-primary)] mb-3">
             Have a project in mind?
           </h3>
-          <p className="text-[#6B7A99] mb-6 max-w-md mx-auto">
+          <p className="text-[var(--text-muted)] mb-6 max-w-md mx-auto">
             Let&apos;s collaborate and turn your idea into a high-quality digital product.
           </p>
           <motion.button
             onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            className="px-8 py-3.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-teal-700 to-teal-400 text-white shadow-lg shadow-teal-500/20 hover:shadow-teal-500/35 transition-all duration-300"
+            className="px-8 py-3.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-teal-700 to-teal-400 text-[var(--text-primary)] shadow-lg shadow-teal-500/20 hover:shadow-teal-500/35 transition-all duration-300"
           >
             Let&apos;s Work Together
           </motion.button>

@@ -41,7 +41,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'py-3 bg-[#030812]/80 backdrop-blur-xl border-b border-white/5'
+            ? 'py-3 bg-[rgba(var(--page-bg-rgb),0.8)] backdrop-blur-xl border-b border-[rgba(var(--surface-rgb),0.05)]'
             : 'py-5'
         }`}
       >
@@ -56,7 +56,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-700 to-teal-400/60 flex items-center justify-center">
               <Code2 size={16} className="text-[#030812]" />
             </div>
-            <span className="font-syne font-700 text-lg text-white">
+            <span className="font-syne font-700 text-lg text-[var(--text-primary)]">
               Zuhoor<span className="text-teal-400">.</span>
             </span>
           </motion.a>
@@ -70,7 +70,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.07 + 0.3 }}
-                className="relative px-4 py-2 text-sm text-[#8896B3] hover:text-white transition-colors duration-200 animated-underline group"
+                className="relative px-4 py-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200 animated-underline group"
               >
                 {link.label}
               </motion.button>
@@ -84,7 +84,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setDarkMode(!darkMode)}
-              className="w-9 h-9 rounded-lg glass flex items-center justify-center text-[#8896B3] hover:text-teal-400 transition-colors"
+              className="w-9 h-9 rounded-lg glass flex items-center justify-center text-[var(--text-secondary)] hover:text-teal-400 transition-colors"
               aria-label="Toggle theme"
             >
               {darkMode ? <Sun size={15} /> : <Moon size={15} />}
@@ -95,7 +95,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => scrollTo('#contact')}
-              className="hidden md:flex items-center gap-2 px-5 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-teal-700 to-teal-400 text-white hover:shadow-lg hover:shadow-teal-500/25 transition-all duration-300"
+              className="hidden md:flex items-center gap-2 px-5 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-teal-700 to-teal-400 text-[var(--text-primary)] hover:shadow-lg hover:shadow-teal-500/25 transition-all duration-300"
             >
               Hire Me
             </motion.button>
@@ -103,7 +103,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
             {/* Mobile menu */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden w-9 h-9 rounded-lg glass flex items-center justify-center text-[#8896B3]"
+              className="md:hidden w-9 h-9 rounded-lg glass flex items-center justify-center text-[var(--text-secondary)]"
             >
               {mobileOpen ? <X size={16} /> : <Menu size={16} />}
             </button>
@@ -119,21 +119,21 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed top-[70px] left-4 right-4 z-40 rounded-2xl bg-[#091224]/95 backdrop-blur-xl border border-white/8 p-4"
+            className="fixed top-[70px] left-4 right-4 z-40 rounded-2xl bg-[rgba(var(--surface-solid-rgb),0.95)] backdrop-blur-xl border border-[rgba(var(--surface-rgb),0.08)] p-4"
           >
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className="w-full text-left px-4 py-3 text-sm text-[#8896B3] hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+                className="w-full text-left px-4 py-3 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[rgba(var(--surface-rgb),0.05)] rounded-lg transition-all duration-200"
               >
                 {link.label}
               </button>
             ))}
-            <div className="mt-3 pt-3 border-t border-white/5">
+            <div className="mt-3 pt-3 border-t border-[rgba(var(--surface-rgb),0.05)]">
               <button
                 onClick={() => scrollTo('#contact')}
-                className="w-full py-3 rounded-lg text-sm font-medium bg-gradient-to-r from-teal-700 to-teal-400 text-white"
+                className="w-full py-3 rounded-lg text-sm font-medium bg-gradient-to-r from-teal-700 to-teal-400 text-[var(--text-primary)]"
               >
                 Hire Me
               </button>

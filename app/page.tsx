@@ -15,7 +15,7 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div className={darkMode ? 'dark' : 'light'}>
       <div className="relative min-h-screen bg-[var(--navy-950)] text-[var(--text-primary)] overflow-x-hidden">
         <AnimatedBackground />
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />

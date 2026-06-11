@@ -2,14 +2,14 @@
 
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { ExternalLink, ArrowUpRight, ChevronRight } from 'lucide-react';
+import { ExternalLink, ArrowUpRight, ChevronRight, Car, BookOpen, ShoppingBag, Coins, UtensilsCrossed, Globe2, Brain } from 'lucide-react';
 
 const projects = [
   {
     id: 1,
     name: 'Car Advisers',
     category: 'Automotive',
-    emoji: '🚗',
+    icon: Car,
     tagline: 'Digital platform for automotive advisory services',
     description:
       'A production platform focused on vehicle-related consulting, user guidance, and service workflows with a responsive web experience.',
@@ -30,7 +30,7 @@ const projects = [
     id: 2,
     name: 'Idris Book Bank',
     category: 'Education',
-    emoji: '📚',
+    icon: BookOpen,
     tagline: 'Book sharing and educational resource platform',
     description:
       'A platform designed to improve access to books and learning resources with structured cataloging and user-friendly browsing.',
@@ -51,7 +51,7 @@ const projects = [
     id: 3,
     name: 'Hunars.com',
     category: 'Marketplace',
-    emoji: '🛍️',
+    icon: ShoppingBag,
     tagline: 'Skills and services discovery platform',
     description:
       'A modern marketplace experience connecting users with skilled professionals and service offerings through streamlined interactions.',
@@ -72,7 +72,7 @@ const projects = [
     id: 4,
     name: 'Allcoin',
     category: 'Blockchain',
-    emoji: '🪙',
+    icon: Coins,
     tagline: 'Crypto and blockchain focused web platform',
     description:
       'A blockchain-oriented project supporting crypto-focused workflows and web interfaces for decentralized ecosystem users.',
@@ -93,7 +93,7 @@ const projects = [
     id: 5,
     name: 'Saborly.es',
     category: 'eCommerce',
-    emoji: '🍽️',
+    icon: UtensilsCrossed,
     tagline: 'Restaurant eCommerce platform with 6 language options',
     description:
       'An eCommerce solution for restaurants with multilingual customer journeys, localized content, and streamlined online ordering workflows.',
@@ -114,7 +114,7 @@ const projects = [
     id: 6,
     name: 'Braav',
     category: 'Platform',
-    emoji: '🌐',
+    icon: Globe2,
     tagline: 'Modern web platform for digital solutions',
     description:
       'A production web platform focused on modern business workflows and strong technical execution across frontend and backend layers.',
@@ -135,7 +135,7 @@ const projects = [
     id: 7,
     name: 'Sharp Logicians',
     category: 'Software',
-    emoji: '🧠',
+    icon: Brain,
     tagline: 'Digital product and development platform',
     description:
       'A software-focused platform delivering modern development solutions with clean engineering and maintainable architecture.',
@@ -178,14 +178,14 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`relative rounded-2xl border border-white/6 overflow-hidden cursor-default group ${
+      className={`relative rounded-2xl border border-[rgba(var(--surface-rgb),0.06)] overflow-hidden cursor-default group ${
         project.featured ? 'lg:col-span-2' : ''
       }`}
       style={{
         background: hovered
           ? `linear-gradient(135deg, ${project.accent}15, transparent)`
-          : 'rgba(255,255,255,0.03)',
-        borderColor: hovered ? `${project.accent}30` : 'rgba(255,255,255,0.06)',
+          : 'rgba(var(--surface-rgb),0.03)',
+        borderColor: hovered ? `${project.accent}30` : 'rgba(var(--surface-rgb),0.06)',
         transition: 'all 0.4s ease',
         boxShadow: hovered ? `0 20px 60px ${project.accent}15` : 'none',
       }}
@@ -200,9 +200,9 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         <div className="flex items-start justify-between mb-5">
           <div className="flex items-center gap-3">
             <div
-              className={`w-11 h-11 rounded-xl ${project.accentBg} flex items-center justify-center text-2xl border border-white/8`}
+              className={`w-11 h-11 rounded-xl ${project.accentBg} flex items-center justify-center border border-[rgba(var(--surface-rgb),0.08)]`}
             >
-              {project.emoji}
+              <project.icon size={20} style={{ color: project.accent }} />
             </div>
             <div>
               <span
@@ -220,27 +220,27 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             rel="noopener noreferrer"
             animate={{ rotate: hovered ? 45 : 0 }}
             transition={{ duration: 0.3 }}
-            className="w-8 h-8 rounded-lg glass border border-white/8 flex items-center justify-center text-[#6B7A99] hover:text-white transition-colors"
+            className="w-8 h-8 rounded-lg glass border border-[rgba(var(--surface-rgb),0.08)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
           >
             <ArrowUpRight size={14} />
           </motion.a>
         </div>
 
         {/* Title */}
-        <h3 className="font-syne font-bold text-xl text-white mb-1.5">{project.name}</h3>
+        <h3 className="font-syne font-bold text-xl text-[var(--text-primary)] mb-1.5">{project.name}</h3>
         <p className="text-sm mb-3" style={{ color: project.accent }}>{project.tagline}</p>
 
         {/* Description */}
-        <p className="text-sm text-[#6B7A99] leading-relaxed mb-5">{project.description}</p>
+        <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-5">{project.description}</p>
 
         {/* Key Features */}
         <div className="mb-5">
-          <p className="text-[10px] uppercase tracking-widest text-[#6B7A99] mb-2.5 font-medium">
+          <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-2.5 font-medium">
             Key Features
           </p>
           <ul className="space-y-1.5">
             {project.features.map((feat) => (
-              <li key={feat} className="flex items-center gap-2 text-xs text-[#8896B3]">
+              <li key={feat} className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
                 <ChevronRight size={10} style={{ color: project.accent }} />
                 {feat}
               </li>
@@ -253,7 +253,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           {project.tech.map((t) => (
             <span
               key={t}
-              className="px-2 py-1 rounded-md text-xs text-[#8896B3] border border-white/6"
+              className="px-2 py-1 rounded-md text-xs text-[var(--text-secondary)] border border-[rgba(var(--surface-rgb),0.06)]"
               style={{ background: `${project.accent}08` }}
             >
               {t}
@@ -271,8 +271,8 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           className="mt-5 w-full py-2.5 rounded-xl text-sm font-medium flex items-center justify-center gap-2 border transition-all duration-300"
           style={{
             background: hovered ? `${project.accent}20` : 'transparent',
-            borderColor: hovered ? `${project.accent}50` : 'rgba(255,255,255,0.08)',
-            color: hovered ? project.accent : '#6B7A99',
+            borderColor: hovered ? `${project.accent}50` : 'rgba(var(--surface-rgb),0.08)',
+            color: hovered ? project.accent : 'var(--text-muted)',
           }}
         >
           <ExternalLink size={13} />
@@ -307,7 +307,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="font-syne font-bold text-4xl sm:text-5xl text-white"
+            className="font-syne font-bold text-4xl sm:text-5xl text-[var(--text-primary)]"
           >
             Featured <span className="text-gradient">Projects</span>
           </motion.h2>
@@ -315,7 +315,7 @@ export default function Projects() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.2 }}
-            className="text-[#6B7A99] text-sm max-w-xs"
+            className="text-[var(--text-muted)] text-sm max-w-xs"
           >
             Production-grade projects across AI, SaaS, and eCommerce
           </motion.p>
@@ -334,7 +334,7 @@ export default function Projects() {
             whileHover={{ scale: 1.03, y: -1 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => setShowMore((prev) => !prev)}
-            className="px-6 py-3 rounded-xl text-sm font-medium glass border border-white/10 text-white hover:border-teal-500/30 hover:bg-white/6 transition-all duration-300"
+            className="px-6 py-3 rounded-xl text-sm font-medium glass border border-[rgba(var(--surface-rgb),0.10)] text-[var(--text-primary)] hover:border-teal-500/30 hover:bg-[rgba(var(--surface-rgb),0.06)] transition-all duration-300"
           >
             {showMore ? 'Show Less' : 'View More'}
           </motion.button>
@@ -347,9 +347,9 @@ export default function Projects() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 12 }}
               transition={{ duration: 0.35 }}
-              className="mt-6 glass rounded-2xl p-6 border border-white/6"
+              className="mt-6 glass rounded-2xl p-6 border border-[rgba(var(--surface-rgb),0.06)]"
             >
-              <p className="text-[10px] uppercase tracking-widest text-[#6B7A99] mb-4 font-medium">
+              <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-4 font-medium">
                 Remaining Projects
               </p>
               <div className="flex flex-wrap gap-2.5">
@@ -360,14 +360,14 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 rounded-lg glass border border-white/8 text-xs text-[#8896B3] hover:text-white hover:border-teal-500/30 transition-colors"
+                      className="px-3 py-1.5 rounded-lg glass border border-[rgba(var(--surface-rgb),0.08)] text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-teal-500/30 transition-colors"
                     >
                       {project.name}
                     </a>
                   ) : (
                     <span
                       key={project.name}
-                      className="px-3 py-1.5 rounded-lg glass border border-white/8 text-xs text-[#6B7A99]"
+                      className="px-3 py-1.5 rounded-lg glass border border-[rgba(var(--surface-rgb),0.08)] text-xs text-[var(--text-muted)]"
                     >
                       {project.name}
                     </span>

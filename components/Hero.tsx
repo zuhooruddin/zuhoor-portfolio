@@ -2,15 +2,15 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { ArrowDown, Sparkles, Zap, Globe, Download } from 'lucide-react';
+import { ArrowDown, Sparkles, Zap, Globe, Download, Cloud, Bot, Server, Database, CreditCard, Flame } from 'lucide-react';
 
 const floatingTags = [
-  { label: 'AWS', icon: '☁️', color: 'from-white/10 to-white/5', delay: 0 },
-  { label: 'OpenAI API', icon: '🤖', color: 'from-teal-700/15 to-teal-400/5', delay: 0.3 },
-  { label: 'Node.js', icon: '🚀', color: 'from-cyan-500/15 to-cyan-400/5', delay: 0.6 },
-  { label: 'MongoDB', icon: '🗄️', color: 'from-green-500/10 to-green-400/5', delay: 0.9 },
-  { label: 'Stripe', icon: '💳', color: 'from-violet-500/10 to-violet-400/5', delay: 1.1 },
-  { label: 'Firebase', icon: '🔥', color: 'from-orange-500/10 to-orange-400/5', delay: 1.3 },
+  { label: 'AWS', icon: Cloud, color: 'from-[rgba(var(--surface-rgb),0.10)] to-[rgba(var(--surface-rgb),0.05)]', delay: 0 },
+  { label: 'OpenAI API', icon: Bot, color: 'from-teal-700/15 to-teal-400/5', delay: 0.3 },
+  { label: 'Node.js', icon: Server, color: 'from-cyan-500/15 to-cyan-400/5', delay: 0.6 },
+  { label: 'MongoDB', icon: Database, color: 'from-green-500/10 to-green-400/5', delay: 0.9 },
+  { label: 'Stripe', icon: CreditCard, color: 'from-violet-500/10 to-violet-400/5', delay: 1.1 },
+  { label: 'Firebase', icon: Flame, color: 'from-orange-500/10 to-orange-400/5', delay: 1.3 },
 ];
 
 const stats = [
@@ -54,7 +54,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="font-syne text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6"
             >
-              <span className="text-white">Zuhoor</span>
+              <span className="text-[var(--text-primary)]">Zuhoor</span>
               <br />
               <span className="text-gradient">Uddin</span>
             </motion.h1>
@@ -64,7 +64,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-syne text-lg sm:text-xl text-[#8896B3] font-medium mb-4"
+              className="font-syne text-lg sm:text-xl text-[var(--text-secondary)] font-medium mb-4"
             >
               Full Stack Developer
               <span className="mx-2 text-teal-500">|</span>
@@ -76,7 +76,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-[#6B7A99] text-base sm:text-lg leading-relaxed mb-10 max-w-lg"
+              className="text-[var(--text-muted)] text-base sm:text-lg leading-relaxed mb-10 max-w-lg"
             >
               Building scalable web apps, AI tools, and modern digital products
               — from concept to production.
@@ -93,7 +93,7 @@ export default function Hero() {
                 onClick={scrollToProjects}
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-medium text-sm bg-gradient-to-r from-teal-700 to-teal-400 text-white shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 transition-all duration-300"
+                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-medium text-sm bg-gradient-to-r from-teal-700 to-teal-400 text-[var(--text-primary)] shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 transition-all duration-300"
               >
                 <Zap size={15} />
                 View Projects
@@ -103,7 +103,7 @@ export default function Hero() {
                 onClick={scrollToContact}
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-medium text-sm glass border border-white/10 text-white hover:border-teal-500/30 hover:bg-white/6 transition-all duration-300"
+                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-medium text-sm glass border border-[rgba(var(--surface-rgb),0.10)] text-[var(--text-primary)] hover:border-teal-500/30 hover:bg-[rgba(var(--surface-rgb),0.06)] transition-all duration-300"
               >
                 <Globe size={15} />
                 Contact Me
@@ -114,7 +114,7 @@ export default function Hero() {
                 download
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-medium text-sm glass border border-white/10 text-white hover:border-teal-500/30 hover:bg-white/6 transition-all duration-300"
+                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-medium text-sm glass border border-[rgba(var(--surface-rgb),0.10)] text-[var(--text-primary)] hover:border-teal-500/30 hover:bg-[rgba(var(--surface-rgb),0.06)] transition-all duration-300"
               >
                 <Download size={15} />
                 Download CV
@@ -139,7 +139,7 @@ export default function Hero() {
                   <div className="font-syne font-bold text-xl sm:text-2xl text-gradient-subtle mb-0.5">
                     {stat.value}
                   </div>
-                  <div className="text-[10px] sm:text-xs text-[#6B7A99] leading-tight">{stat.label}</div>
+                  <div className="text-[10px] sm:text-xs text-[var(--text-muted)] leading-tight">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -194,9 +194,9 @@ export default function Hero() {
                       top: `calc(50% + ${y}px)`,
                       transform: 'translate(-50%, -50%)',
                     }}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r ${tag.color} backdrop-blur-md border border-white/8 text-xs font-medium text-white/90 whitespace-nowrap`}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r ${tag.color} backdrop-blur-md border border-[rgba(var(--surface-rgb),0.08)] text-xs font-medium text-[var(--text-primary)] whitespace-nowrap`}
                   >
-                    <span>{tag.icon}</span>
+                    <tag.icon size={12} />
                     {tag.label}
                   </motion.div>
                 );
@@ -219,7 +219,7 @@ export default function Hero() {
             onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
-            className="flex flex-col items-center gap-2 text-[#6B7A99] hover:text-teal-400 transition-colors"
+            className="flex flex-col items-center gap-2 text-[var(--text-muted)] hover:text-teal-400 transition-colors"
           >
             <span className="text-xs tracking-widest uppercase">Scroll</span>
             <ArrowDown size={14} />
