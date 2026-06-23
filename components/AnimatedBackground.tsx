@@ -13,13 +13,20 @@ export default function AnimatedBackground() {
 
     let animationId: number;
     let time = 0;
+    let running = true;
 
     const resize = () => {
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight * 4;
+      canvas.height = window.innerHeight;
     };
     resize();
     window.addEventListener('resize', resize);
+
+    const onVisibility = () => {
+      running = !document.hidden;
+      if (running) draw();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
 
     const particles: Array<{
       x: number; y: number; vx: number; vy: number;
@@ -28,7 +35,8 @@ export default function AnimatedBackground() {
 
     const colors = ['rgba(79,136,255,', 'rgba(217,164,65,', 'rgba(147,161,191,'];
 
-    for (let i = 0; i < 60; i++) {
+    const PARTICLE_COUNT = 36;
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -76,13 +84,14 @@ export default function AnimatedBackground() {
       }
 
       time += 0.005;
-      animationId = requestAnimationFrame(draw);
+      if (running) animationId = requestAnimationFrame(draw);
     };
 
     draw();
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener('resize', resize);
+      document.removeEventListener('visibilitychange', onVisibility);
     };
   }, []);
 

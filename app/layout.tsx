@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     description: 'Building scalable web apps, AI tools, and modern digital products.',
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: 'evhPtA7js1QhhQsD3nA2rEPS702Wq0V3E19VAZ426Sw',
+  },
 };
 
 export default function RootLayout({
