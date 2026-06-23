@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   verification: {
-    google: 'evhPtA7js1QhhQsD3nA2rEPS702Wq0V3E19VAZ426Sw',
+    google: '_VK_ImGHAPLkbdxJE-FdRVhRwRAyuuFF-wvLS4SFGPk',
   },
 };
 
